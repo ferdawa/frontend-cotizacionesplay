@@ -284,8 +284,8 @@ function App() {
                     <div className="space-y-4">
                       {selectedGame.prices.map((priceInfo, idx) => {
                         const isLowest =
-                          getLowestPrice(selectedGame.prices)?.store ===
-                          priceInfo.store;
+                          getLowestPrice(selectedGame.prices)?.price ===
+                          priceInfo.price;
 
                         return (
                           <div
@@ -307,6 +307,11 @@ function App() {
                                     </span>
                                   )}
                                 </h4>
+                                {priceInfo.seller && (
+                                  <p className="text-slate-400 text-sm mt-1">
+                                    Vendedor: {priceInfo.seller}
+                                  </p>
+                                )}
                               </div>
                               <div className="text-right">
                                 <p className="text-3xl font-bold text-white">
